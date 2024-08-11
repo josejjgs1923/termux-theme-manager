@@ -51,10 +51,10 @@ esac
 case $comando in
  zsh|tema) 
 
-    CONF_PATH="${HOME}/.zshrc"
+    CONF_PATH="${ZDOTDIR}/.zshrc"
     USED_FILE="${USED_PATH}/zsh/used.log"
     DIRS="$ZSH/themes $ZSH/custom/themes"
-    FAVLIST="${HOME}/.zsh_favlist"
+    FAVLIST="${ZDOTDIR}/.zsh_favlist"
     ZSH_CONFIGURATION_THEME_USED=$( 
       grep -Po "ZSH_THEME=(\S+)" $CONF_PATH | sed -E "s/.*=//g" 
     )
@@ -112,7 +112,7 @@ case $comando in
         CONF_PATH="${HOME}/.termux/font.ttf"
         USED_FILE="${USED_PATH}/fonts/used.log"
         DIRS="$HOME/.fonts"
-        FAVLIST="${HOME}/.font_favlist"
+        FAVLIST="${ZDOTDIR}/.font_favlist"
         EXTENSION="ttf"
         ESPERA="sleep 2 ;"
         ;;
@@ -120,7 +120,7 @@ case $comando in
         CONF_PATH="${HOME}/.termux/colors.properties"
         USED_FILE="${USED_PATH}/colorscheme/used.log"
         DIRS="$HOME/.colorscheme"
-        FAVLIST="${HOME}/.color_favlist"
+        FAVLIST="${ZDOTDIR}/.color_favlist"
         EXTENSION="colors"
         ESPERA=""
          ;;
