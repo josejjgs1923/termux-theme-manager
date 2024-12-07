@@ -41,6 +41,11 @@ case $comando in
   ;;
 esac
 
+SHORTCUT_SALVAR="ctrl-s"
+SHORTCUT_GUARDAR_FAV="ctrl-g"
+SHORTCUT_ALTERNAR_FAV="ctrl-f"
+SHORTCUT_ALTERNAR_PREVIEW="ctrl-o"
+
 case $comando in
  zsh|tema) 
 
@@ -87,7 +92,7 @@ case $comando in
         print -P "$PROMPT                                                                                      $RPROMPT"
     }
 
-    INGRESAR_CAMBIO="ctrl-c:become@ 
+    INGRESAR_CAMBIO="${SHORTCUT_SALVAR}:become@ 
       $( declare -f cambiar_tema ) ; 
       cambiar_tema {}; 
       exec zsh @"
@@ -142,7 +147,7 @@ case $comando in
       fi
     }
 
-    INGRESAR_CAMBIO="ctrl-c:become@ 
+    INGRESAR_CAMBIO="${SHORTCUT_SALVAR}:become@ 
       $( declare -f cambiar ) ; 
       cambiar {}; 
       termux-reload-settings @"
@@ -213,11 +218,11 @@ DEF_LIST_OPTIONS="$( declare -f list_options )"
 
 export DEF_LIST_OPTIONS
 
-GUARDAR_FAVORITOS="ctrl-g:transform| 
+GUARDAR_FAVORITOS="${SHORTCUT_GUARDAR_FAV}:transform| 
   $( declare -f insert_favlist ) ; 
   insert_favlist {} |"
 
-ALTERNAR_FAVORITOS="ctrl-f:transform% 
+ALTERNAR_FAVORITOS="${SHORTCUT_ALTERNAR_FAV}:transform% 
 $( declare -f alternar_favoritos ) ; 
 alternar_favoritos %"
 
@@ -249,7 +254,7 @@ list_options "$DIRS" | fzf\
   --bind $INGRESAR_CAMBIO\
   --bind $ALTERNAR_FAVORITOS\
   --bind $GUARDAR_FAVORITOS\
-  --bind "ctrl-o:toggle-preview"
+  --bind "${SHORTCUT_ALTERNAR_PREVIEW}:toggle-preview"
 
 
 if [[ -f "$modo_conf" ]]
