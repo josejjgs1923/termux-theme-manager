@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-_pwd=$PWD 
-
-[[ $_pwd == $HOME ]] || cd 
+cd 
 
 USED_PATH="${HOME}/.config/mytermux"
 
@@ -271,4 +269,3 @@ fi
 
 rm -f "$modo" 
 
-[[ $_pwd == $HOME ]] || popd -q  
