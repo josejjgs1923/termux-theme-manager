@@ -39,7 +39,7 @@ case $comando in
   ;;
 esac
 
-SHORTCUT_SALVAR="ctrl-s"
+SHORTCUT_SALVAR="ctrl-a"
 SHORTCUT_GUARDAR_FAV="ctrl-g"
 SHORTCUT_ALTERNAR_FAV="ctrl-f"
 SHORTCUT_ALTERNAR_PREVIEW="ctrl-o"
