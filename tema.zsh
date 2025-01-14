@@ -166,7 +166,7 @@ case $comando in
 esac
 
 list_options() {
-  find $( printf "$*" ) -maxdepth 1 -type f -print | sed -E "s/\.[^\/]+$//"
+  find $( printf "$*" ) -maxdepth 1 -type "f,l" -print | sed -E "s/\.[^\/]+$//"
 }
 
 insert_favlist() {
